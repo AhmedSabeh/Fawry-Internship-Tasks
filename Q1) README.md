@@ -88,6 +88,9 @@ Error: Missing search string or file.
 ```
 ---
 
+  ![Screenshot (94)](https://github.com/user-attachments/assets/16528bf4-896d-41b3-8fc9-1d8cc8bc32f5)
+
+
 ## 3. Reflective Section
    
 a) How your script handles arguments and options
