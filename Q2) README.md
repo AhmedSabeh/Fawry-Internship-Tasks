@@ -28,6 +28,9 @@ or
 ```
 nslookup internal.example.com
 ```
+![ScreenShot 1](https://github.com/user-attachments/assets/cadbe379-4291-402a-ab91-2959ba750e6b)
+
+
 Then, compare with Google's DNS:
 ```
 dig @8.8.8.8 internal.example.com
@@ -36,11 +39,16 @@ or
 ```
 nslookup internal.example.com 8.8.8.8
 ```
+![Screenshot (101)](https://github.com/user-attachments/assets/22761bab-9854-423c-9449-3259fccf3e14)
+
 ### 2. Diagnose Service Reachability 
 - Check if the web service is reachable:
 ```
 curl -v http://internal.example.com
 ```
+![Screenshot (102)](https://github.com/user-attachments/assets/196c588b-dc1a-47c3-8cdb-07bcd1e331e2)
+
+
 - Check if the web service is listening on port 80/443:
 ```
 sudo netstat -tuln | grep ':80\|:443'
@@ -49,6 +57,8 @@ or
 ```
 sudo ss -tuln | grep ':80\|:443'
 ```
+![Screenshot (103)](https://github.com/user-attachments/assets/1f01da67-d034-4a09-b91a-ff3169de149d)
+
 - Test connectivity using telnet or nc:
 ```
 telnet internal.example.com 80
@@ -57,6 +67,8 @@ or
 ```
 nc -zv internal.example.com 80
 ```
+![Screenshot (104)](https://github.com/user-attachments/assets/c1f2513e-2cc0-4b0a-b494-65c5edf5cf51)
+
 ### 3. Trace the Issue – List All Possible Causes
 
 DNS	- Internal DNS server down
@@ -77,7 +89,7 @@ Confirm: Use ```dig``` or ```nslookup``` with the internal DNS server.
 
 Fix: Restart the DNS service:
 ```
-sudo systemctl restart named
+sudo systemctl restart <named>
 ```
 - Problem 2: Wrong /etc/resolv.conf
 Confirm: Check ```/etc/resolv.conf``` for incorrect DNS.
